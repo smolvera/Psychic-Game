@@ -3,76 +3,57 @@
 var alphabetOptions = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var compGuess = "";
 var userGuess = [];
+
+// array that stores letters already guessed
 var lettersGuessed = [];
 
 // game counters
 var winCount = 0;
 var lossCount = 0;
-var guessCount = 9;
+var guessCount = 0;
 
-// game fucttions
-function startGame () {
+
+// game functions comp picks a random letter and stores it
+
     compGuess = alphabetOptions[Math.floor(Math.random() * alphabetOptions.length)];
-    console.log(compGuess);
-}
-
-//testing and debugging
-console.log(userGuess);
-console.log(compGuess);
-console.log(lettersGuessed);
-
-//resets
-guessCount = 9;
-lettersGuessed = [];
-userGuess = [];
-
-
-//loop for game to coninue **
-for (i = 0; i<guessCount; i++) {
-    lettersGuessed.push(" ");  
-    }
-
-//change html to reflect round conditions
-document.getElementById("guessesLeft").innerHTML = guessCount;
-document.getElementById("winCounter").innerHTML = winCount;
-document.getElementById("lossCounter").innerHTML = lossCount;
-
-// function checkLetter(letter){  
-//     var wrongLetter = false;
-//     for (var i=0; i<guessCount; i++) {
-//         if(userGuess[i] == letter) {
-//             checkLetter[i] = true;
-//             console.log(checkletter);
-//         }
-//     }
-// }
-// else {
-//      wrongLetters.push(letter);
-//      guessesLeft --
-//  }
-
-
-startGame();
+    console.log("Wins: " + winCount + "Losses: " + lossCount + "Guesses: " + guessCount + "Guessed Letters: " + lettersGuessed + " Computer letter: " + compGuess);
 
 document.onkeyup = function(event) {
-    var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
- }
- 
- if compGuess = userGuess {
-     winCount++;
- }
+        if (compGuess === userGuess) {
+            winCount++;
+            alert("You Won!");
+            guessCount = 0;
+            lossCount = 0;
+            lettersGuessed = [];
+            compGuess = alphabetOptions[Math.floor(Math.random() * alphabetOptions.length)];
 
-console.log(winCount)
-// function newFunction() {
-//     return "abcdefghijklmnopqrstuvwxyz";
-// }
+            document.getElementById("win").innerHTML = winCount;
+            document.getElementById("loss").innerHTML = lossCount;
+            }
+                
+            else if (compGuess !== userGuess) {
+                guessCount++;
+                lossCount++;
+                lettersGuessed.push(userGuess);
+            }
+            document.getElementById("loss").innerHTML = lossCount;
+            document.getElementById("lAG").innerHTML = lettersGuessed;
+            document.getElementById("gL").innerHTML = 9 - guessCount;
+            
+            if(guessCount == 9) {
+                winCount = 0;
+                lossCount = 0;
+                lettersGuessed = [];
+                guessCount = 0;
+                alert("You Lose");
+                compGuess = alphabetOptions[Math.floor(Math.random() * alphabetOptions.length)];
 
-// var compGuess = compChoice["newfuction.random"];
+                document.getElementById("loss").innerHTML = lossCount; 
+                document.getElementById("lAG").innerHTML = lettersGuessed;   
+            }
+        }
 
-
-// while (emptyString.length < 6) {
-//   emptyString += alphabet[Math.floor(Math.random() * alphabet.length)];
-// } 
-// console.log(emptyString);
-// 
+           
+      
