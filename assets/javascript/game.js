@@ -25,7 +25,6 @@ document.onkeyup = function(event) {
             winCount++;
             alert("You Won!");
             guessCount = 0;
-            lossCount = 0;
             lettersGuessed = [];
             compGuess = alphabetOptions[Math.floor(Math.random() * alphabetOptions.length)];
 
@@ -35,16 +34,17 @@ document.onkeyup = function(event) {
                 
             else if (compGuess !== userGuess) {
                 guessCount++;
-                lossCount++;
+                // lossCount++;
                 lettersGuessed.push(userGuess);
             }
+            document.getElementById("win").innerHTML = winCount;
             document.getElementById("loss").innerHTML = lossCount;
             document.getElementById("lAG").innerHTML = lettersGuessed;
             document.getElementById("gL").innerHTML = 9 - guessCount;
             
             if(guessCount == 9) {
                 winCount = 0;
-                lossCount = 0;
+                lossCount++;
                 lettersGuessed = [];
                 guessCount = 0;
                 alert("You Lose");
