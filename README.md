@@ -11,7 +11,6 @@ Check out the Deployed version: [Psychic Game](https://smolvera.github.io/Psychi
  - Bootstrap CDN 
  - CSS
  - JavaScript
- - jQuery
  
 ### Further Development:
 - Style responsive layout 
