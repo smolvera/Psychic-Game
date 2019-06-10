@@ -1,39 +1,43 @@
 
 body {
-    background-color: pink;
-    background-image: url(../images/seeingEye.jpg);
-    background-image: no-repeat;
-    background-size: cover;
-}
-
-.w3-container {
-    border: 0px;
-    padding: 50px;
-    margin: 20px;
-}
-
-#psychicGame {
+    background-color: black;
     font-size: 60px;
     font-family: 'Dancing Script', cursive;
     text-align: center;
-    font-weight: bolder;
-    position: top;
     color: whitesmoke;
+}
+
+/* parent container for flex-box */
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+#psychicGame {
+    font-weight: bolder;
+    padding: 30px;
+    font-size: 60px;
+}
+
+header h2 {
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+.wrapper {
+    margin: auto;
+    background-image: url(../images/seeingEye.jpg);
+    background-image: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 300px;
+    border: 3px solid white;
+    padding: 50px;
 }
 
 
 .guessWhat, .scoreBoard {
     font-size: 40px;
-    font-family: 'Dancing Script', cursive;
-    text-align: center;
-    color: whitesmoke;
 }
 
-.crystalBall { 
-    display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-  }

@@ -1,6 +1,8 @@
+// --------------------Global Variables----------------------//
 
-// arrays
+// Array storing Letters
 var alphabetOptions = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
 var compGuess = "";
 var userGuess = [];
 
@@ -13,14 +15,16 @@ var lossCount = 0;
 var guessCount = 0;
 
 
-// game functions comp picks a random letter and stores it
+//------------- Game functions comp picks a random letter and stores it--------------//
 
-    compGuess = alphabetOptions[Math.floor(Math.random() * alphabetOptions.length)];
-    console.log("Wins: " + winCount + "Losses: " + lossCount + "Guesses: " + guessCount + "Guessed Letters: " + lettersGuessed + " Computer letter: " + compGuess);
+compGuess = alphabetOptions[Math.floor(Math.random() * alphabetOptions.length)];
+console.log("Wins: " + winCount + "Losses: " + lossCount + "Guesses: " + guessCount + "Guessed Letters: " + lettersGuessed + " Computer letter: " + compGuess);
 
+// Function to start game and check if the key pressed is the same as guessed 
 document.onkeyup = function(event) {
     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
+// Checks if Guessed key is the same as Computer's pick
         if (compGuess === userGuess) {
             winCount++;
             alert("You Won!");
@@ -31,6 +35,7 @@ document.onkeyup = function(event) {
             document.getElementById("win").innerHTML = winCount;
             document.getElementById("loss").innerHTML = lossCount;
             }
+// If guess is incorrect, add guessed letter to HTML
                 
             else if (compGuess !== userGuess) {
                 guessCount++;
@@ -42,6 +47,8 @@ document.onkeyup = function(event) {
             document.getElementById("lAG").innerHTML = lettersGuessed;
             document.getElementById("gL").innerHTML = 9 - guessCount;
             
+// If user doesn't guess within 9 guesses
+
             if(guessCount == 9) {
                 winCount = 0;
                 lossCount++;

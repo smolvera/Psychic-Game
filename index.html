@@ -13,33 +13,24 @@
 </head>
 
 <body>
-    <row>
-        <col-md-12>
-           <h1 id="psychicGame">The Psychic Game</h1>
-        </col-md-12>
-    </row>  
+    <!-- Game Header -->
+    <section class="gameBoard">
+        <header>
+            <h1 id="psychicGame">The Psychic Game</h1>
+            <h2>Type any key to begin!</h2>
+        </header>
     
-    <row>
-        <col-lg-12>
-            <div="#">
-                <!-- <img src="assets/images/crystalBall.jpg" alt="Crystal Ball" class="crystalBall"/> -->
+    <!-- Game Container -->
+        <div class="wrapper">
+            <h2 class="guessWhat">Guess What Letter I'm Thinking Of</h2>
+            <div class="scoreBoard">
+                <h3>Wins: <span id="win">0</span></h3>
+                <h3>Losses: <span id="loss">0</span></h3>
+                <h3>Guesses left: <span id="gL">9</span></h3>
+                <h3>Letters Already Guessed: <span id="lAG"></span></h3>
             </div>
-        </col-lg-12>
-    </row>
-
-    <row>
-        <col-md-12>
-            <div class="w3-container">
-                <h2 class="guessWhat">Guess What Letter I'm Thinking Of:</h2>
-                    <div class="scoreBoard">
-                        <h3>Wins: <span id="win">0</span></h3>
-                        <h3>Losses: <span id="loss">0</span></h3>
-                        <h3>Guesses left: <span id="gL">9</span></h3>
-                        <h3>Letters Already Guessed: <span id="lAG"></span></h3>
-                    </div>
-            </div>
-        </col-md-12>
-    </row>
+        </div>
+    </section>
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>
